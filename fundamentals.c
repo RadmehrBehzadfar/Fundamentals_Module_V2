@@ -36,18 +36,18 @@ void fundamentals(void) {
     printf("End of Indexing Strings Demo\n");  // print a message to indicate the end of the function
 
     //V2
-    printf("*** Start of Measuring strings Demo ***\n); // Printing a start message for the demo
+    printf("*** Start of Measuring strings Demo ***\n"); // Printing a start message for the demo
 
-        char buffer2[BUFFER_SIZE]; // Declaring a character array buffer2 with a size of BUFFER_SIZE
+    char buffer2[BUFFER_SIZE]; // Declaring a character array buffer2 with a size of BUFFER_SIZE
 
     do {
-        printf("Type a string (q - to quit):\n); // Prompting the user to enter a string
-            fgets(buffer2, BUFFER_SIZE, stdin); // Reading input from the user and storing it in buffer2
+        printf("Type a string (q - to quit):\n"); // Prompting the user to enter a string
+        fgets(buffer2, BUFFER_SIZE, stdin); // Reading input from the user and storing it in buffer2
         buffer2[strlen(buffer2) - 1] = '\0'; // Removing the newline character from the input string
         if (strcmp(buffer2, "q") != 0) // Checking if the input string is not "q"
             printf("The lenght of \'%s\' is %d characters\n", // Printing the length of the input string
                 buffer2, (int)strlen(buffer2));
     } while (strcmp(buffer2, "q") != 0); // Continuing the loop until the input string is "q"
-    printf("*** End of Measuring String Demo ***\n\n); // Printing an end message for the demo
+    printf("*** End of Measuring String Demo ***\n\n"); // Printing an end message for the demo
 
 }
