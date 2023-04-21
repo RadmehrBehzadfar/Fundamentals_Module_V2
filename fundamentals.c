@@ -1,5 +1,4 @@
-#include <stdio.h> // Including the standard input/output library
-#define CRT_SECURE_NO_WARNINGS  // disables warnings for certain functions in Visual Studio
+#define _CRT_SECURE_NO_WARNINGS
 #define BUFFER_SIZE 80  // maximum size of user input
 #define NUM_INPUT_SIZE 10  // maximum size of numeric input
 #include "fundamentals.h"  // included header file for function declarations
@@ -38,16 +37,32 @@ void fundamentals(void) {
     //V2
     printf("*** Start of Measuring strings Demo ***\n"); // Printing a start message for the demo
 
-    char buffer2[BUFFER_SIZE]; // Declaring a character array buffer2 with a size of BUFFER_SIZE
+        char buffer2[BUFFER_SIZE]; // Declaring a character array buffer2 with a size of BUFFER_SIZE
 
     do {
         printf("Type a string (q - to quit):\n"); // Prompting the user to enter a string
-        fgets(buffer2, BUFFER_SIZE, stdin); // Reading input from the user and storing it in buffer2
+            fgets(buffer2, BUFFER_SIZE, stdin); // Reading input from the user and storing it in buffer2
         buffer2[strlen(buffer2) - 1] = '\0'; // Removing the newline character from the input string
         if (strcmp(buffer2, "q") != 0) // Checking if the input string is not "q"
             printf("The lenght of \'%s\' is %d characters\n", // Printing the length of the input string
                 buffer2, (int)strlen(buffer2));
     } while (strcmp(buffer2, "q") != 0); // Continuing the loop until the input string is "q"
     printf("*** End of Measuring String Demo ***\n\n"); // Printing an end message for the demo
-
+    
+    //V2
+    printf("*** Start of Copying Starting Demo ***\n");
+    char destination[BUFFER_SIZE];
+    char source[BUFFER_SIZE];
+    do {
+        destination[0] = '\0';
+        printf("Destination string is reset to empty\n");
+        printf("Type the source string (q - to quit):\n");
+        fgets(source, BUFFER_SIZE, stdin);
+        source[strlen(source) - 1] = '\0';
+        if (strcmp(source, "q") != 0) {
+            strcpy(destination, source);
+            printf("New destination string is \'%s\'\n", destination);
+        }
+    } while (strcmp(source, "q") != 0);
+    printf("*** End of Copying String Demo ***\n\n");
 }
